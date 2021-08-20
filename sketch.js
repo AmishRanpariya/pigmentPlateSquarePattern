@@ -1,4 +1,4 @@
-let l = 50;
+let l = 135;
 let rows, cols;
 const params = new URLSearchParams(window.location.search);
 let colString;
@@ -8,7 +8,8 @@ if (params.has("c")) {
 	colString = "000000ffffff000000ffffff";
 }
 function setup() {
-	let canvas = createCanvas(400, 400);
+	pixelDensity(1);
+	let canvas = createCanvas(1080, 1080);
 	cols = width / l;
 	rows = height / l;
 	canvas.mousePressed(stopr);
