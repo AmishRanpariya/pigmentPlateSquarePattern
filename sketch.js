@@ -1,4 +1,4 @@
-let l = 135;
+let l = 120;
 let rows, cols;
 const params = new URLSearchParams(window.location.search);
 let colString;
@@ -10,13 +10,14 @@ if (params.has("c")) {
 function setup() {
 	pixelDensity(1);
 	let canvas = createCanvas(1080, 1080);
-	cols = width / l;
-	rows = height / l;
+	cols = (width - 120) / l;
+	rows = (height - 120) / l;
 	canvas.mousePressed(stopr);
 
 	noStroke();
 	fill(0, 255, 100);
-	background(20);
+	background(255);
+	translate(60, 60);
 
 	for (let j = 0; j < cols; j++) {
 		for (let i = 0; i < rows; i++) {
@@ -48,9 +49,6 @@ function chooseDiffThen(oldCol) {
 }
 
 function draw() {
-	randomFill();
-
-	randomShape(floor(random(cols)) * l, floor(random(rows)) * l, l, l);
 	noLoop();
 }
 
